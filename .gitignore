@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+fe/node_modules
+
+# production
+fe/dist
+
+# misc
+fe/.DS_Store
+fe/npm-debug.log*
+
+# be
+be/__pycache__
+be/pyutils/__pycache__
+be/.DS_Store
+be/.vscode/
+be/node_modules/
+be/db/
+
+.DS_Store
+
+

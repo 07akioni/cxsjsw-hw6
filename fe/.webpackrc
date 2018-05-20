@@ -1,0 +1,32 @@
+{
+  "extraBabelPlugins": [
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
+  ],
+  "proxy": {
+    "/single/*": {
+      "target": "http://127.0.0.1:3000",
+      "changeOrigin": true,
+      "secure": false
+    },
+    "/multi/*": {
+      "target": "http://127.0.0.1:3000",
+      "changeOrigin": true,
+      "secure": false
+    },
+    "/multiElement/*": {
+      "target": "http://127.0.0.1:3000",
+      "changeOrigin": true,
+      "secure": false
+    },
+    "/testOrder/*": {
+      "target": "http://127.0.0.1:3000",
+      "changeOrigin": true,
+      "secure": false
+    },
+    "/order/*": {
+      "target": "http://127.0.0.1:3000",
+      "changeOrigin": true,
+      "secure": false
+    }
+  }
+}
