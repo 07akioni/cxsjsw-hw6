@@ -17,6 +17,7 @@ be/.DS_Store
 be/.vscode/
 be/node_modules/
 be/db/
+be/data/test_trial_data.json
 
 .DS_Store
 

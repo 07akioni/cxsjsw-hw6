@@ -115,10 +115,10 @@ def test_trial_data():
     res['trial'] = []
     for order in orders:
         res['trial'].append(get_dict_from_order(order))
-    test_trial_data = open(path.join(path.dirname(path.abspath(__file__)), '../test/test_trial_data.json'), 'w')
+    test_trial_data = open(path.join(path.dirname(path.abspath(__file__)), '../data/test_trial_data.json'), 'w')
     test_trial_data.write(json.dumps(res))
     test_trial_data.close()
-    print('根据 data/trial_data.json 的 input 生成的新数据被储存在 test/test_trial_data.json')
+    print('根据 data/trial_data.json 的 input 生成的新数据被储存在 data/test_trial_data.json')
     print('output 套餐的内容和 trial_data 可能不一样，因为有多种计算套餐的方法。但是 cost 都是一样的')
 
 def less_price_order_with_single(order, log=True):
@@ -137,9 +137,11 @@ def less_price_order_with_single(order, log=True):
         try:
             order_info = get_dict_from_order(new_order)
         except Exception as e:
-            print('出错了')
-            traceback.print_exc()
-            print(str(e))
+            if log:
+                # print('出错了')
+                # traceback.print_exc()
+                # print(str(e))
+                pass
             continue
         if order_info['cost'] <= new_min_price and order_info['cost'] <= original_order_info['cost']:
             new_min_price = order_info['cost']

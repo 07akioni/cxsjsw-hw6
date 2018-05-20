@@ -4,7 +4,8 @@
   "description": "",
   "main": "order.js",
   "scripts": {
-    "init": "node init/init.js; sequelize db:migrate; node init/initDb.js"
+    "init": "node init/init.js; sequelize db:migrate; node init/initDb.js",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
