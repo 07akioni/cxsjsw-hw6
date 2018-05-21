@@ -8,7 +8,10 @@ const formItemLayout = {
   wrapperCol: { span: 12 }
 };
 
-
+/*
+ * 创建单品的组件
+ * 还是单品好写啊，其他的部分那作业描述的算什么鬼，作为一个软件说明文档我给打-10分
+ */
 class CreateSingle extends React.Component {
   constructor (props) {
     super(props)

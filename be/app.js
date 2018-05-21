@@ -10,6 +10,10 @@ app.use(morgan('short'))
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+
+/*
+ * 这么简单的文件我就不写注释了，基本按照restful的风格设计
+ */
 app.get('/single', async function (req, res) {
   try {
     const singles = await db.single.findAll({

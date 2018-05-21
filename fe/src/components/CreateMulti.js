@@ -9,7 +9,9 @@ const formItemLayout = {
   wrapperCol: { span: 12 }
 };
 
-
+/*
+ * 创建套餐的组件
+ */
 class CreateMulti extends React.Component {
   constructor (props) {
     super(props)
@@ -45,7 +47,7 @@ class CreateMulti extends React.Component {
         // do nothing
       } else {
         /*
-         * 我懒得在后端校验价格了，希望老师留作业先自己实现一遍看看花自己多久时间:)
+         * 我还是在后端校验价格了
          */
         const currentPrice = Number(values.Mprice)
         let originalPrice = 0

@@ -6,7 +6,9 @@ import CreateMulti from '../components/CreateMulti'
 const { Header, Content, Footer } = Layout;
 const TabPane = Tabs.TabPane
 
-
+/*
+ * 主页，创建菜单
+ */
 class IndexPage extends React.Component {
   constructor (props) {
     super(props)

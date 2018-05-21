@@ -5,8 +5,10 @@ import Order from '../components/Order'
 const { Header, Content, Footer } = Layout;
 const TabPane = Tabs.TabPane
 
-
-class IndexPage extends React.Component {
+/*
+ * 下订单的页面
+ */
+class OrderPage extends React.Component {
   constructor (props) {
     super(props)
     this.toInput = this.toInput.bind(this)
@@ -40,7 +42,7 @@ class IndexPage extends React.Component {
   }
 }
 
-IndexPage.propTypes = {
+OrderPage.propTypes = {
 };
 
-export default connect()(IndexPage);
+export default connect()(OrderPage);

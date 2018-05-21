@@ -9,6 +9,9 @@ const formItemLayout = {
   wrapperCol: { span: 12 }
 };
 
+/*
+ * 单品输入表项的标签
+ */
 class SingleLabel extends React.Component {
   render () {
     return (
@@ -17,6 +20,9 @@ class SingleLabel extends React.Component {
   }
 }
 
+/*
+ * 套餐输入表项的标签
+ */
 class MultiLabel extends React.Component {
   constructor (props) {
     super(props)
@@ -32,7 +38,10 @@ class MultiLabel extends React.Component {
   }
 }
 
-class CreateMulti extends React.Component {
+/*
+ * 下订单的组件
+ */
+class Order extends React.Component {
   constructor (props) {
     super(props)
     this.check = this.check.bind(this)
@@ -266,6 +275,6 @@ class CreateMulti extends React.Component {
   }
 }
 
-CreateMulti = Form.create()(CreateMulti)
+Order = Form.create()(Order)
 
-export default CreateMulti
+export default Order

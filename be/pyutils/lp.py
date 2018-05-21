@@ -9,6 +9,7 @@ singles, single_dict = get_singles()
 combos, combo_dict = get_combos()
 orders = get_trail_data()
 
+# 将菜单转化为只有单品
 def convert_order_to_all_single(order):
     new_order = {}
     for key in order.keys():
@@ -26,6 +27,7 @@ def convert_order_to_all_single(order):
                     new_order[combo_item['id']] = combo_item['count'] * order[key]
     return new_order
 
+# 得到某订单的最小价格和相应的解
 def minPrice(order):
     model = pulp.LpProblem("让点菜价格最小", pulp.LpMinimize)
 
@@ -85,6 +87,7 @@ def minPrice(order):
 
     return (pulp.value(model.objective), single_lp_vars, combo_lp_vars)
 
+# 得到订单的原始价格
 def price_of_order(order):
     price = 0
     for key in order.keys():
@@ -94,6 +97,7 @@ def price_of_order(order):
             price += (single_dict[key]['price'] * order[key])
     return price
 
+# 从订单得到原订单、最便宜的订单、和价格
 def get_dict_from_order(order):
     cost, svs, cvs = minPrice(convert_order_to_all_single(order))
     output = dict()
@@ -121,6 +125,8 @@ def test_trial_data():
     print('根据 data/trial_data.json 的 input 生成的新数据被储存在 data/test_trial_data.json')
     print('output 套餐的内容和 trial_data 可能不一样，因为有多种计算套餐的方法。但是 cost 都是一样的')
 
+# 为订单寻找减价的套餐
+# 注意，只有拿到新的菜品价格不增长才行！
 def less_price_order_with_single(order, log=True):
     single_order = convert_order_to_all_single(order)
     original_order_info = get_dict_from_order(single_order)
